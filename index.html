@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポケモンGO レイド回数予想シミュレーター</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ポケモンGO レイド回数予想シミュレーター</h1>
+        </header>
+
+        <section id="target-settings" class="settings-section">
+            <h2>目標設定</h2>
+            <div class="form-group">
+                <label for="target-level">目標レベル:</label>
+                <select id="target-level">
+                    <option value="40" selected>レベル40 (飴248個)</option>
+                    <option value="50">レベル50 (飴248個 + XL飴296個)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="enable-forme-change">
+                <label for="enable-forme-change">フォルムチェンジを行う</label>
+            </div>
+
+            <div id="forme-change-inputs" class="hidden form-group-nested">
+                <div class="form-group">
+                    <label for="forme-change-candy">フォルムチェンジに必要な追加の飴:</label>
+                    <input type="number" id="forme-change-candy" min="0" placeholder="例: 50">
+                </div>
+                <div class="form-group">
+                    <label for="forme-change-energy">フォルムチェンジに必要なエナジー:</label>
+                    <input type="number" id="forme-change-energy" min="0" placeholder="例: 200">
+                </div>
+            </div>
+        </section>
+
+        <section id="environment-settings-area" class="settings-section">
+            <h2>環境設定</h2>
+            <div id="environments-container">
+                </div>
+            <button id="add-environment-button" class="button-add">環境設定を追加</button>
+        </section>
+
+        <button id="simulate-button" class="button-primary">シミュレーション実行</button>
+
+        <section id="results-area" class="results-section hidden">
+            <h2>シミュレーション結果</h2>
+            <div id="overall-summary" class="overall-summary">
+                </div>
+            <div id="environment-results-container">
+                </div>
+            <div id="error-message" class="error-message hidden"> </div>
+        </section>
+
+        <footer>
+            <p>© 2024 ポケモンGO レイド回数予想シミュレーター</p>
+        </footer>
+    </div>
+
+    <script src="script.js" defer></script> </body>
+</html>
+
+
